@@ -1,14 +1,14 @@
 //
-//  tic_tac_toeTests.swift
-//  tic_tac_toeTests
+//  TicTacToeTests.swift
+//  TicTacToeTests
 //
 //  Created by 曹紫光 on 2022/6/27.
 //
 
 import XCTest
-@testable import tic_tac_toe_WatchKit_Extension
+@testable import TicTacToe_WatchKit_Extension
 
-class tic_tac_toeTests: XCTestCase {
+class TicTacToeTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

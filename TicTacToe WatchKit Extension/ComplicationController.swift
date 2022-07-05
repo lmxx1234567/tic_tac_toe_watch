@@ -1,6 +1,6 @@
 //
 //  ComplicationController.swift
-//  tic_tac_toe WatchKit Extension
+//  TicTacToe WatchKit Extension
 //
 //  Created by 曹紫光 on 2022/6/27.
 //
@@ -14,7 +14,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let descriptors = [
-            CLKComplicationDescriptor(identifier: "complication", displayName: "tic_tac_toe", supportedFamilies: CLKComplicationFamily.allCases)
+            CLKComplicationDescriptor(identifier: "complication", displayName: "TicTacToe", supportedFamilies: CLKComplicationFamily.allCases)
             // Multiple complication support can be added here with more descriptors
         ]
         

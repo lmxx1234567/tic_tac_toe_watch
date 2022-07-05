@@ -1,6 +1,6 @@
 //
 //  NotificationView.swift
-//  tic_tac_toe WatchKit Extension
+//  TicTacToe WatchKit Extension
 //
 //  Created by 曹紫光 on 2022/6/27.
 //

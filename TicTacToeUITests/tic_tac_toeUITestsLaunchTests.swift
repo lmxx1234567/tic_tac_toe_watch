@@ -1,13 +1,13 @@
 //
-//  tic_tac_toeUITestsLaunchTests.swift
-//  tic_tac_toeUITests
+//  TicTacToeUITestsLaunchTests.swift
+//  TicTacToeUITests
 //
 //  Created by 曹紫光 on 2022/6/27.
 //
 
 import XCTest
 
-class tic_tac_toeUITestsLaunchTests: XCTestCase {
+class TicTacToeUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
