@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct Cell: View {
-    var id = UUID()
-    var controller: ContentView
+    var controller: ContentView?
     @Binding var value: String
     
     var body: some View {
-        Button(value, action: self.trigger)
+        Button(action: trigger){
+            Text(value)
+        }
+    }
+    
+    init(value: Binding<String>) {
+        self._value = value
     }
     
     init(value: Binding<String>, ctrl: ContentView) {
@@ -22,16 +27,27 @@ struct Cell: View {
     }
     
     func trigger() {
-        switch value {
-        case "":
-            value = controller.current
-            controller.current = controller.changeCurrent(current: controller.current)
-        default:
-            if(value != controller.current){
-                controller.current = value
-                value = ""
+        if controller == nil {
+            value = value == "O" ? "X" : "O"
+        }
+        else{
+            switch value {
+            case "":
+                value = controller!.current
+                controller!.current = controller!.changeCurrent(current: controller!.current)
+            default:
+                if(value != controller!.current){
+                    controller!.current = value
+                    value = ""
+                }
             }
         }
         return
+    }
+}
+
+struct Cell_Previews: PreviewProvider {
+    static var previews: some View {
+        Cell(value: .constant("X"))
     }
 }

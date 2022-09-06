@@ -44,6 +44,7 @@ struct ContentView: View {
                 }
             }
             Button("Reset",action: reset)
+                .frame(width: 100)
         }
     }
 }
