@@ -1,14 +1,14 @@
 //
-//  TicTacToeTests.swift
-//  TicTacToeTests
+//  TicTacToe_Watch_AppTests.swift
+//  TicTacToe Watch AppTests
 //
-//  Created by 曹紫光 on 2022/6/27.
+//  Created by 曹紫光 on 9/26/22.
 //
 
 import XCTest
-@testable import TicTacToe_WatchKit_Extension
+@testable import TicTacToe_Watch_App
 
-class TicTacToeTests: XCTestCase {
+final class TicTacToe_Watch_AppTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -23,7 +23,7 @@ class TicTacToeTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        // Tests marked async will run the test method on an arbitrary thread managed by the Swift runtime.
     }
 
     func testPerformanceExample() throws {

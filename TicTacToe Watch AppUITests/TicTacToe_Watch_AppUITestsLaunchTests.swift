@@ -1,13 +1,13 @@
 //
-//  TicTacToeUITestsLaunchTests.swift
-//  TicTacToeUITests
+//  TicTacToe_Watch_AppUITestsLaunchTests.swift
+//  TicTacToe Watch AppUITests
 //
-//  Created by 曹紫光 on 2022/6/27.
+//  Created by 曹紫光 on 9/26/22.
 //
 
 import XCTest
 
-class TicTacToeUITestsLaunchTests: XCTestCase {
+final class TicTacToe_Watch_AppUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
