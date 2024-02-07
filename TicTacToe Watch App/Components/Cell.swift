@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Cell: View {
     var controller: ContentView?
+    var i,j : Int?
     @Binding var value: String
     
     var body: some View {
@@ -21,9 +22,11 @@ struct Cell: View {
         self._value = value
     }
     
-    init(value: Binding<String>, ctrl: ContentView) {
+    init(value: Binding<String>,i :Int,j:Int, ctrl: ContentView) {
         controller = ctrl
         self._value = value
+        self.i=i
+        self.j=j
     }
     
     func trigger() {
@@ -31,16 +34,7 @@ struct Cell: View {
             value = value == "O" ? "X" : "O"
         }
         else{
-            switch value {
-            case "":
-                value = controller!.current
-                controller!.current = controller!.changeCurrent(current: controller!.current)
-            default:
-                if(value != controller!.current){
-                    controller!.current = value
-                    value = ""
-                }
-            }
+            value = controller!.updateValue(i:self.i!,j:self.j!)
         }
         return
     }

@@ -8,20 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var current = "X"
-    @State var panel: [[String]] = [
+    @State private var current = "X"
+    @State private var panel: [[String]] = [
         ["", "", ""],
         ["", "", ""],
         ["", "", ""],
     ]
     
     func changeCurrent(current: String) -> String {
-        switch current{
-        case "X":
+        if (current=="X"){
             return "O"
-        default:
-            return "X"
         }
+        return "X"
     }
     
     func reset() {
@@ -33,20 +31,33 @@ struct ContentView: View {
         }
     }
     
-    var body: some View {
-        VStack {
-            Text("Tic Tac Toe").font(.title3)
-            ForEach(0..<panel.count,id:\.self) { i in
-                HStack {
-                    ForEach(0..<panel[i].count,id:\.self) { j in
-                        Cell(value: $panel[i][j], ctrl: self)
-                    }
+    func updateValue(i:Int,j:Int) -> String{
+        var value = self.panel[i][j]
+        if value == ""{
+            value = self.current
+            self.current = self.changeCurrent(current: self.current)
+        }
+        else if(value != self.current){
+            self.current = value
+            value = ""
+        }
+        return value
+    }
+
+var body: some View {
+    VStack {
+        Text("Tic Tac Toe").font(.title3)
+        ForEach(0..<panel.count,id:\.self) { i in
+            HStack {
+                ForEach(0..<panel[i].count,id:\.self) { j in
+                    Cell(value: $panel[i][j],i:i,j:j, ctrl: self)
                 }
             }
-            Button("Reset",action: reset)
-                .frame(width: 100)
         }
+        Button("Reset",action: reset)
+            .frame(width: 100)
     }
+}
 }
 
 struct ContentView_Previews: PreviewProvider {
